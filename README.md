@@ -1,38 +1,28 @@
-# Vant PWA Design Skill for Claude Code
+# Vant Design Skill for Claude Code
 
-A Claude Code skill that helps you design and build Progressive Web Apps (PWA) and mobile applications using the **Vant** UI component library.
+A Claude Code skill for designing and building mobile apps and PWAs using the **Vant** UI component library. Supports both Vue.js development and pure HTML/CSS prototyping.
 
 ## Installation
 
-### Option 1: Clone this repository (Recommended)
+### Option 1: Clone and Copy (Recommended)
 
 ```bash
-# Clone into your project directory
+# Clone the repo
 git clone https://github.com/owen800q/vant-claude-design-skill.git
-cd vant-claude-design-skill
 
-# Or copy the skills to your existing project
-cp -r .claude/skills/* /path/to/your/project/.claude/skills/
+# Copy to your project
+cp -r vant-claude-design-skill/.claude/skills/vant-design /path/to/your/project/.claude/skills/
 ```
 
 ### Option 2: Manual Installation
 
-1. Create the skills directory in your project:
 ```bash
-mkdir -p .claude/skills
-```
+# Create skills directory in your project
+mkdir -p .claude/skills/vant-design
 
-2. Copy the skill directories into `.claude/skills/`:
-   - `vant-pwa-design/SKILL.md` - Main design system reference (Vue.js focused)
-   - `vant-page-templates/SKILL.md` - Vue.js page templates and components
-   - `vant-html-prototype/SKILL.md` - HTML prototyping (no build tools needed)
-
-**Note:** Each skill must be a directory with a `SKILL.md` file containing YAML frontmatter.
-
-### Option 3: Add as Git Submodule
-
-```bash
-git submodule add https://github.com/owen800q/vant-claude-design-skill.git .claude/skills/vant
+# Download SKILL.md (or copy manually)
+curl -o .claude/skills/vant-design/SKILL.md \
+  https://raw.githubusercontent.com/owen800q/vant-claude-design-skill/main/.claude/skills/vant-design/SKILL.md
 ```
 
 ## Directory Structure
@@ -41,93 +31,52 @@ git submodule add https://github.com/owen800q/vant-claude-design-skill.git .clau
 your-project/
 ├── .claude/
 │   └── skills/
-│       ├── vant-pwa-design/
-│       │   └── SKILL.md            # Design system & Vue components
-│       ├── vant-page-templates/
-│       │   └── SKILL.md            # Complete Vue page templates
-│       └── vant-html-prototype/
-│           └── SKILL.md            # HTML/CSS prototyping
+│       └── vant-design/
+│           └── SKILL.md    # Complete Vant design system
 ├── src/
 └── ...
 ```
 
-**Important:** Each skill must be a **directory** containing a `SKILL.md` file with YAML frontmatter (name + description). This is required for Claude Code to discover and load the skill.
-
 ## Usage
 
-Once the skill files are in your `.claude/skills/` directory, Claude Code will **automatically** use them when you ask questions about:
+Once installed, Claude Code will **automatically** use this skill when you ask about:
 
 - Mobile app design
 - PWA development
 - Vant components
-- Mobile UI patterns
 - HTML prototyping
+- Mobile UI patterns
 
 ### Example Prompts
 
-**For HTML Prototypes:**
 ```
-Create an HTML prototype for a login page using Vant design
-```
-```
-Design a mobile e-commerce home page as HTML mockup
+Create an HTML prototype for a mobile login page
 ```
 ```
-Build a static HTML profile page with Vant styling
-```
-
-**For Vue.js Apps:**
-```
-Create a Vue component for a product list using Vant
+Build a product list page with Vant styling
 ```
 ```
-Build a shopping cart page with Vant components
+Design a shopping cart with Vue and Vant
 ```
-```
-Implement dark mode toggle with Vant ConfigProvider
-```
-
-**Design Questions:**
 ```
 What are the Vant color tokens?
-```
-```
-How do I use Vant's spacing system?
-```
-```
-Show me the Vant button sizes
 ```
 
 ## What's Included
 
-### 1. `vant-pwa-design/SKILL.md`
-- Complete design tokens (colors, typography, spacing)
-- CSS variables reference
-- Dark mode configuration
-- Component architecture patterns
-- Layout system (Grid, Row/Col)
-- Common UI patterns
-- PWA best practices
-- Theme customization
+The unified skill covers:
 
-### 2. `vant-page-templates/SKILL.md`
-- Login page template
-- Home page with tab bar
-- Product list/detail pages
-- Shopping cart page
-- Profile/settings page
-- Component compositions (address picker, coupon selector, etc.)
+- **Design Tokens** - Colors, typography, spacing, borders, animations
+- **HTML Prototyping** - CDN setup, pure HTML/CSS components, page templates
+- **Vue.js Components** - Tab bar, forms, lists, cards, dialogs, toasts
+- **Page Templates** - Login, home, profile pages (both HTML and Vue)
+- **Dark Mode** - Theme switching support
+- **PWA Setup** - Manifest, viewport, safe areas
+- **Icon Reference** - 100+ icons with usage patterns
 
-### 3. `vant-html-prototype/SKILL.md`
-- CDN-based setup (no build tools)
-- Pure HTML/CSS component examples
-- Complete static page templates
-- Icon reference
-- Dark mode toggle
-- Prototyping tips
+## Quick Start
 
-## Quick Start for HTML Prototypes
-
+### HTML Prototype
 ```html
 <!DOCTYPE html>
 <html>
@@ -136,32 +85,28 @@ Show me the Vant button sizes
   <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/vant@4/lib/index.css">
 </head>
 <body>
-  <!-- Your prototype here -->
+  <!-- Your prototype -->
 </body>
 </html>
+```
+
+### Vue.js
+```bash
+npm install vant
 ```
 
 ## Design Tokens Quick Reference
 
 | Token | Value |
 |-------|-------|
-| Primary Color | `#1989fa` |
-| Success Color | `#07c160` |
-| Danger Color | `#ee0a24` |
-| Warning Color | `#ff976a` |
-| Text Color | `#323233` |
+| Primary | `#1989fa` |
+| Success | `#07c160` |
+| Danger | `#ee0a24` |
+| Warning | `#ff976a` |
+| Text | `#323233` |
 | Background | `#f7f8fa` |
-| Border Radius SM | `2px` |
-| Border Radius MD | `4px` |
-| Border Radius LG | `8px` |
-| Padding Base | `4px` |
+| Radius SM/MD/LG | `2px` / `4px` / `8px` |
 | Padding MD | `16px` |
-
-## Requirements
-
-- Claude Code CLI
-- For Vue.js: Vue 3.x, Vant 4.x
-- For HTML: Any modern browser
 
 ## License
 
