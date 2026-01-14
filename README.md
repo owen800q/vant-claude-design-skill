@@ -22,10 +22,12 @@ cp -r .claude/skills/* /path/to/your/project/.claude/skills/
 mkdir -p .claude/skills
 ```
 
-2. Download the skill files into `.claude/skills/`:
-   - `vant-pwa-design.md` - Main design system reference (Vue.js focused)
-   - `vant-page-templates.md` - Vue.js page templates and components
-   - `vant-html-prototype.md` - HTML prototyping (no build tools needed)
+2. Copy the skill directories into `.claude/skills/`:
+   - `vant-pwa-design/SKILL.md` - Main design system reference (Vue.js focused)
+   - `vant-page-templates/SKILL.md` - Vue.js page templates and components
+   - `vant-html-prototype/SKILL.md` - HTML prototyping (no build tools needed)
+
+**Note:** Each skill must be a directory with a `SKILL.md` file containing YAML frontmatter.
 
 ### Option 3: Add as Git Submodule
 
@@ -39,12 +41,17 @@ git submodule add https://github.com/owen800q/vant-claude-design-skill.git .clau
 your-project/
 ├── .claude/
 │   └── skills/
-│       ├── vant-pwa-design.md      # Design system & Vue components
-│       ├── vant-page-templates.md   # Complete Vue page templates
-│       └── vant-html-prototype.md   # HTML/CSS prototyping
+│       ├── vant-pwa-design/
+│       │   └── SKILL.md            # Design system & Vue components
+│       ├── vant-page-templates/
+│       │   └── SKILL.md            # Complete Vue page templates
+│       └── vant-html-prototype/
+│           └── SKILL.md            # HTML/CSS prototyping
 ├── src/
 └── ...
 ```
+
+**Important:** Each skill must be a **directory** containing a `SKILL.md` file with YAML frontmatter (name + description). This is required for Claude Code to discover and load the skill.
 
 ## Usage
 
@@ -93,7 +100,7 @@ Show me the Vant button sizes
 
 ## What's Included
 
-### 1. `vant-pwa-design.md`
+### 1. `vant-pwa-design/SKILL.md`
 - Complete design tokens (colors, typography, spacing)
 - CSS variables reference
 - Dark mode configuration
@@ -103,7 +110,7 @@ Show me the Vant button sizes
 - PWA best practices
 - Theme customization
 
-### 2. `vant-page-templates.md`
+### 2. `vant-page-templates/SKILL.md`
 - Login page template
 - Home page with tab bar
 - Product list/detail pages
@@ -111,7 +118,7 @@ Show me the Vant button sizes
 - Profile/settings page
 - Component compositions (address picker, coupon selector, etc.)
 
-### 3. `vant-html-prototype.md`
+### 3. `vant-html-prototype/SKILL.md`
 - CDN-based setup (no build tools)
 - Pure HTML/CSS component examples
 - Complete static page templates

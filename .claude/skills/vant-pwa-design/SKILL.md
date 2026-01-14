@@ -1,3 +1,8 @@
+---
+name: vant-pwa-design
+description: Design and build Progressive Web Apps (PWA) and mobile applications using Vant Vue.js component library. Use when building mobile-first web apps, PWAs, Vue.js mobile interfaces, implementing Vant components, responsive layouts, dark mode, theming, or mobile UI patterns like tab bars, navigation, forms, lists, and e-commerce components.
+---
+
 # Vant PWA & Mobile App Design Skill
 
 You are an expert in designing and building Progressive Web Apps (PWA) and mobile applications using **Vant** - a lightweight, customizable Vue.js mobile UI library with 80+ high-quality components.

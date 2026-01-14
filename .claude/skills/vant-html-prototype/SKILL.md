@@ -1,3 +1,8 @@
+---
+name: vant-html-prototype
+description: Create HTML prototypes and static mockups for mobile apps using Vant design system. Use when building HTML mockups, static mobile pages, UI demos without build tools, clickable prototypes, or mobile web pages with Vant CSS styling. Provides CDN setup, pure HTML/CSS components, and complete page templates.
+---
+
 # Vant HTML Prototype Design Skill
 
 You are an expert in creating **HTML prototypes** and **static mockups** for mobile apps using the Vant design system. This skill focuses on pure HTML/CSS prototyping WITHOUT requiring Vue.js or build tools.
@@ -1221,26 +1226,6 @@ Vant provides these utility classes you can use directly:
             </div>
           </div>
         </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/180x140/ddd/999?text=Product" alt="">
-          <div class="product-info">
-            <p class="product-title">Portable Power Bank 20000mAh</p>
-            <div>
-              <span class="product-price">¥79</span>
-              <span class="product-price-old">¥159</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/180x140/ddd/999?text=Product" alt="">
-          <div class="product-info">
-            <p class="product-title">USB-C Fast Charger</p>
-            <div>
-              <span class="product-price">¥49</span>
-              <span class="product-price-old">¥99</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -1477,11 +1462,6 @@ Vant provides these utility classes you can use directly:
         <i class="van-icon van-icon-arrow arrow"></i>
       </div>
       <div class="menu-item">
-        <i class="van-icon van-icon-browsing-history-o icon"></i>
-        <span>Browsing History</span>
-        <i class="van-icon van-icon-arrow arrow"></i>
-      </div>
-      <div class="menu-item">
         <i class="van-icon van-icon-coupon-o icon"></i>
         <span>Coupons</span>
         <span class="badge">5</span>
@@ -1496,26 +1476,8 @@ Vant provides these utility classes you can use directly:
         <i class="van-icon van-icon-arrow arrow"></i>
       </div>
       <div class="menu-item">
-        <i class="van-icon van-icon-credit-pay icon"></i>
-        <span>Payment Methods</span>
-        <i class="van-icon van-icon-arrow arrow"></i>
-      </div>
-      <div class="menu-item">
-        <i class="van-icon van-icon-shield-o icon"></i>
-        <span>Account Security</span>
-        <i class="van-icon van-icon-arrow arrow"></i>
-      </div>
-    </div>
-
-    <div class="menu-group">
-      <div class="menu-item">
         <i class="van-icon van-icon-question-o icon"></i>
         <span>Help Center</span>
-        <i class="van-icon van-icon-arrow arrow"></i>
-      </div>
-      <div class="menu-item">
-        <i class="van-icon van-icon-info-o icon"></i>
-        <span>About</span>
         <i class="van-icon van-icon-arrow arrow"></i>
       </div>
     </div>
@@ -1563,7 +1525,6 @@ Vant icons can be used with the class pattern: `van-icon van-icon-{name}`
 | Media | `photo-o`, `photograph`, `video-o`, `music-o`, `play-circle-o` |
 | Social | `like-o`, `star-o`, `comment-o`, `chat-o`, `friends-o` |
 | E-commerce | `coupon-o`, `gift-o`, `gem-o`, `gold-coin-o`, `shopping-cart-o` |
-| Files | `description`, `orders-o`, `records-`|
 
 ---
 
