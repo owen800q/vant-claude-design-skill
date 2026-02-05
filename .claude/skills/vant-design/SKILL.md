@@ -1,11 +1,11 @@
 ---
 name: vant-design
-description: Design and build mobile apps and PWAs using Vant UI component library. Use for mobile-first web apps, Vue.js mobile interfaces, HTML prototypes, Vant components, responsive layouts, dark mode, theming, tab bars, navigation, forms, lists, e-commerce pages, and mobile UI patterns. Supports both Vue.js development and pure HTML/CSS prototyping.
+description: Design and build mobile apps, PWAs, and WeChat Mini Programs using Vant UI and WeChat/WeUI design guidelines. Use for mobile-first web apps, Vue.js mobile interfaces, HTML prototypes, Vant components, WeChat Mini Program design compliance, responsive layouts, dark mode, theming, tab bars, navigation, forms, lists, e-commerce pages, and mobile UI patterns. Supports Vue.js development, pure HTML/CSS prototyping, and WeChat ecosystem design standards.
 ---
 
 # Vant Mobile App Design System
 
-You are an expert in designing and building mobile applications using **Vant** - a lightweight Vue.js mobile UI library with 80+ components. This skill covers both Vue.js development and pure HTML/CSS prototyping.
+You are an expert in designing and building mobile applications using **Vant** - a lightweight Vue.js mobile UI library with 80+ components. This skill covers Vue.js development, pure HTML/CSS prototyping, and **WeChat Mini Program design guidelines** compliance. When designing for the WeChat ecosystem, always follow the WeChat Mini Program design principles and WeUI specifications documented below.
 
 ## Quick Start
 
@@ -47,6 +47,195 @@ npm install vant
 // main.js
 import 'vant/lib/index.css';
 ```
+
+---
+
+## WeChat Mini Program Design Guidelines (微信小程序设计规范)
+
+Reference: https://developers.weixin.qq.com/miniprogram/design/
+
+When building apps for the WeChat ecosystem or following WeChat-style design patterns, apply these official design principles and specifications. The Vant component library is built to align with these standards.
+
+### Core Design Principles
+
+#### 1. Friendly & Polite (友好礼貌)
+- **Clear page focus**: Each page must have one clear focal point to help users understand content immediately
+- **Reduce visual noise**: Remove decorative elements unrelated to user decisions or tasks
+- **Uninterrupted flows**: Do not inject unrelated content into task flows; keep processes smooth
+
+#### 2. Clear & Explicit (清晰明确)
+- **Navigation clarity**: Users must always know where they are, where they can go, and how to go back
+- **Back navigation**: Secondary pages must include a back button (top-left corner)
+- **WeChat official menu**: Reserve space for the top-right system menu (cannot be customized); it offers light/dark color variants
+- **Tab navigation**: 2–5 tabs maximum, **4 recommended**; can be positioned top or bottom; only one tab group per page
+
+#### 3. Convenient & Elegant (便捷优雅)
+- **Minimize input**: Use device APIs (camera, location, etc.) instead of manual entry; prefer selection controls over keyboard input; show search history
+- **Touch targets**: Clickable areas must be **7–9mm** in physical size (≈44px at standard density) to prevent mistaps
+- **Avoid crowded tap areas**: Do not place multiple small interactive elements too close together
+
+#### 4. Unified & Stable (统一稳定)
+- **Consistency**: Use the same controls and interaction patterns across all pages
+- **Reduce learning cost**: Familiar patterns minimize cognitive load; avoid inventing new interaction paradigms
+
+### WeChat Visual Specifications
+
+#### Design Canvas
+- Standard design at **iPhone 6 size: 750×1334px**
+- Use **rpx** units for responsive sizing (screen width = 750rpx, so 1px = 1rpx on iPhone 6)
+
+#### Typography (字体规范)
+
+**Font Family:**
+```css
+font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+/* WeChat defaults to PingFang SC on iOS */
+```
+
+**Font Size Scale (based on 750px design / rpx):**
+
+| Usage | pt | rpx | px (375 screen) |
+|-------|-----|------|------------------|
+| Large title | 20–22 | 40–44 | 20–22 |
+| Page title / Nav title | 18 | 36 | 18 |
+| Body text / Nav bar title | 17 | 34 | 17 |
+| List item text | 16 | 32 | 16 |
+| Secondary / auxiliary text | 14 | 28 | 14 |
+| Caption / description | 13 | 26 | 13 |
+| Minimum / labels / tags | 11–12 | 22–24 | 11–12 |
+
+**Line height:** 1.6 (WeUI default)
+
+#### Color System (颜色规范)
+
+**Text Colors (无彩色):**
+
+| Role | Color Value | Usage |
+|------|-------------|-------|
+| Primary text (Black) | `rgba(0,0,0,0.9)` / `#000` | Main content, titles |
+| Semi-dark text | `rgba(0,0,0,0.7)` | Long-form body content |
+| Secondary text (Grey) | `rgba(0,0,0,0.5)` | Subtitles, descriptions |
+| Placeholder/timestamp (Light) | `rgba(0,0,0,0.3)` | Timestamps, form defaults |
+| Divider lines | `rgba(0,0,0,0.1)` | Separators, borders |
+
+**Functional Colors (有彩色):**
+
+| Role | Color Value | Usage |
+|------|-------------|-------|
+| Link / Blue | `#10AEFF` | Links, interactive text |
+| WeChat brand link | `#576B95` | Article links in WeChat style |
+| Success / Green | `#09BB07` | Completion, success states |
+| Error / Red | `#F43530` | Errors, destructive actions |
+| Warning / Orange | `#F76260` | Warnings |
+
+**States:** Press state = default color at 20% opacity; Disabled state = default color at 10% opacity
+
+**WeUI Background Colors (Light Theme):**
+```css
+--weui-BG-0: #ededed;   /* Page background */
+--weui-BG-1: #f7f7f7;   /* Section background */
+--weui-BG-2: #fff;       /* Card / cell background */
+--weui-BG-3: #f7f7f7;   /* Secondary section */
+--weui-BG-4: #4c4c4c;   /* Dark overlay */
+--weui-BG-5: #fff;       /* Surface */
+```
+
+**WeUI Brand Colors:**
+```css
+--weui-BLUE-100: #10aeff;   /* Primary blue */
+--weui-BLUE-120: #3fbeff;   /* Blue hover */
+--weui-BLUE-170: #b7e6ff;   /* Blue light */
+--weui-BLUE-80: #0c8bcc;    /* Blue pressed */
+--weui-BLUE-90: #0e9ce6;    /* Blue active */
+```
+
+#### Spacing System (间距规范)
+- **Base unit: 8px** — all spacing should be multiples of 8
+- Module vertical gap: **32rpx** (16px)
+- Module horizontal margin: **32rpx** (16px)
+- Common spacing values: **8px, 12px, 16px, 24px, 32px**
+- Icon-to-text gap: **8px**
+
+#### Navigation Dimensions
+
+| Element | Height (rpx) | Height (px) |
+|---------|--------------|-------------|
+| Top navigation bar | 128rpx | 64px |
+| Tab bar (top/bottom) | 98rpx | 49px |
+| Status bar (iOS) | 40rpx | 20px |
+
+#### Icon Specifications
+- Standard icon sizes: **24, 32, 48, 56, 64, 72, 80** (all multiples of 8)
+- Default in-app icon: **100×100px** (50×50pt)
+- Icons should maintain clear visual meaning at all sizes
+
+#### Button Specifications (WeUI)
+```css
+--weui-BTN-HEIGHT: 48px;         /* Large button */
+--weui-BTN-HEIGHT-MEDIUM: 40px;  /* Medium button */
+--weui-BTN-HEIGHT-SMALL: 32px;   /* Small button */
+```
+
+### WeChat Loading & Feedback Patterns
+
+| Pattern | When to Use | Implementation |
+|---------|-------------|----------------|
+| Launch screen | App startup | Brand logo (controlled by WeChat) |
+| Pull-to-refresh | List/feed refresh | Standard WeChat pull-down style |
+| Page loading | Full page load | Simplified skeleton / spinner animation |
+| Modal loading | Global blocking operation | Use sparingly — `showLoadingToast()` |
+| Partial loading | Section content load | **Preferred** — localized spinner within affected area |
+| Toast feedback | Action confirmation | Brief toast: `showSuccessToast()` / `showToast()` |
+| Result page | Critical operation result | Full-page success/failure state |
+| Progress bar | Long operations (upload/download) | Show percentage progress |
+
+**Key rule:** Avoid modal loading overlays for non-global operations. Always prefer localized loading indicators.
+
+### WeChat Error Handling
+- Form errors must **clearly identify the problematic field** with inline error messages
+- Provide **specific correction guidance** (not just "error occurred")
+- Show error summary at top of form when multiple errors exist
+- Network errors should offer **retry options**
+
+### WeChat Dark Mode (WeUI)
+```html
+<!-- Enable dark mode -->
+<body data-weui-theme="dark">
+```
+```css
+/* Dark mode automatically switches all --weui-* variables */
+/* Key dark mode overrides: */
+--weui-BG-0: #111;
+--weui-BG-1: #1e1e1e;
+--weui-BG-2: #191919;
+--weui-BTN-DEFAULT-ACTIVE-BG: hsla(0,0%,100%,.126);
+--weui-DIALOG-LINE-COLOR: hsla(0,0%,100%,.1);
+```
+
+### Accessibility (适老化设计)
+- In elderly-accessible mode, enlarge fonts, icons, and buttons proportionally
+- Maintain **minimum contrast ratio of 4.5:1** for text and icon elements
+- Ensure touch targets meet or exceed the 7–9mm physical size requirement
+
+### Mapping WeChat Design to Vant Components
+
+| WeChat Pattern | Vant Component | Notes |
+|----------------|----------------|-------|
+| Top navigation bar | `van-nav-bar` | Set `left-arrow` for back button |
+| Bottom tab navigation | `van-tabbar` | 2–5 items, recommend 4 |
+| Tab switching (top) | `van-tabs` | Swipeable, scrollable |
+| Cell / list item | `van-cell` | Standard list rows |
+| Form with validation | `van-form` + `van-field` | Inline error messages |
+| Action feedback (toast) | `showToast` / `showSuccessToast` | Brief, non-blocking |
+| Modal dialog | `van-dialog` | For critical confirmations |
+| Action sheet | `van-action-sheet` | Bottom slide-up options |
+| Pull-to-refresh | `van-pull-refresh` | Standard pull-down gesture |
+| Loading indicator | `van-loading` | Localized spinner |
+| Skeleton screen | `van-skeleton` | Page loading placeholder |
+| Search bar | `van-search` | With history suggestions |
+| Swipe cell actions | `van-swipe-cell` | Slide to reveal actions |
+| Empty state | `van-empty` | When no data available |
+| Progress | `van-progress` | Upload/download progress |
 
 ---
 
